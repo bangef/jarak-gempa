@@ -20,10 +20,12 @@ export default function Maps() {
 		});
 
 	useEffect(() => {
-		axios.get("/api/DataMKG/TEWS/gempadirasakan.json").then((res) => {
-			setStateGempa(formatDGT(res.data.Infogempa.gempa));
-			setIsGempadirasakan(true);
-		});
+		axios
+			.get("https://data.bmkg.go.id/DataMKG/TEWS/gempadirasakan.json")
+			.then((res) => {
+				setStateGempa(formatDGT(res.data.Infogempa.gempa));
+				setIsGempadirasakan(true);
+			});
 	}, []);
 	useEffect(() => {
 		if (coords) {

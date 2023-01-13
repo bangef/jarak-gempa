@@ -1,7 +1,6 @@
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
-import ButtonList from "../ButtonList";
 import ParagrafPopup from "./ParagrafPopup";
 
 export default function MapsFigure({ dataGempa, myCoorLat, myCoorLong }) {
@@ -61,7 +60,6 @@ export default function MapsFigure({ dataGempa, myCoorLat, myCoorLong }) {
 					</Marker>
 				)}
 			</MapContainer>
-			<ButtonList />
 		</div>
 	);
 }
