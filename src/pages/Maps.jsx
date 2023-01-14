@@ -6,6 +6,7 @@ import { formatDGT } from "../utils";
 import Background from "../components/Background";
 import Loader from "../components/Loader";
 import MapsFigure from "../components/MapsFigure";
+import { logo } from "../components/images";
 
 export default function Maps() {
 	const [isGempadirasakan, setIsGempadirasakan] = useState(false);
@@ -18,7 +19,6 @@ export default function Maps() {
 			},
 			userDecisionTimeout: 5000,
 		});
-
 	useEffect(() => {
 		axios.get("/api/DataMKG/TEWS/gempadirasakan.json").then((res) => {
 			setStateGempa(formatDGT(res.data.Infogempa.gempa));
@@ -32,11 +32,12 @@ export default function Maps() {
 	}, [coords]);
 
 	return (
-		<Background className="h-screen">
+		<Background className="h-full">
 			<Container className="max-w-4xl">
-				<header className="my-4">
+				<header className="my-4 flex gap-5 items-center justify-center">
+					<img src={logo} alt="Logo Jarak Gempa" width={50} height={50} />
 					<h1 className="text-white font-bold text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl   antialiased ">
-						Update Data Gempa 🌎
+						Jarak Gempa
 					</h1>
 				</header>
 				{!isGeolocationAvailable ? (
